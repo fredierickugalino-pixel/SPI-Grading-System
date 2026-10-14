@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration | St. Peregrine Institute</title>
+
+    <link rel="stylesheet" href="register.css">
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="auth-card register-card">
+
+        <img
+            src="logo.png"
+            alt="St. Peregrine Institute Logo"
+            class="school-logo"
+        >
+
+        <h1>ST. PEREGRINE INSTITUTE</h1>
+        <p class="subtitle">Student Registration</p>
+
+        <form id="registration-form" action="register.php" method="POST">
+
+            <label for="lrn">Learner Reference Number (LRN)</label>
+            <input
+                type="text"
+                id="lrn"
+                name="lrn"
+                placeholder="Enter your LRN"
+                maxlength="20"
+                inputmode="numeric"
+                pattern="[0-9]+"
+                autocomplete="off"
+                required
+            >
+
+            <label for="first_name">First Name</label>
+            <input
+                type="text"
+                id="first_name"
+                name="first_name"
+                placeholder="Enter your first name"
+                maxlength="50"
+                autocomplete="given-name"
+                required
+            >
+
+            <label for="middle_name">Middle Name (Optional)</label>
+            <input
+                type="text"
+                id="middle_name"
+                name="middle_name"
+                placeholder="Enter your middle name if applicable"
+                maxlength="50"
+                autocomplete="additional-name"
+            >
+
+            <label for="last_name">Last Name</label>
+            <input
+                type="text"
+                id="last_name"
+                name="last_name"
+                placeholder="Enter your last name"
+                maxlength="50"
+                autocomplete="family-name"
+                required
+            >
+
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="name@gmail.com"
+                maxlength="100"
+                pattern="[A-Za-z0-9._%+-]+@gmail\.com"
+                title="Enter a valid Gmail address ending in @gmail.com."
+                autocomplete="email"
+                required
+            >
+            <p class="field-message" id="email-status" aria-live="polite"></p>
+
+            <label for="password">
+                Password
+                <span
+                    class="password-info"
+                    data-tooltip="Password requirements: At least 8 characters, one lowercase letter, one uppercase letter, and one special character."
+                    tabindex="0"
+                    aria-label="Password requirements"
+                    role="note"
+                >ⓘ</span>
+            </label>
+
+            <div class="password-wrap">
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="At least 8 characters"
+                    minlength="8"
+                    pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}"
+                    title="At least 8 characters, one lowercase letter, one uppercase letter, and one special character."
+                    autocomplete="new-password"
+                    required
+                >
+
+                <button
+                    type="button"
+                    class="show-password"
+                    data-target="password"
+                    aria-controls="password"
+                >Show</button>
+            </div>
+            <ul class="password-checklist" id="password-checklist" aria-label="Password requirements">
+                <li data-rule="length">At least 8 characters</li>
+                <li data-rule="lowercase">One lowercase letter</li>
+                <li data-rule="uppercase">One uppercase letter</li>
+                <li data-rule="special">One special character</li>
+            </ul>
+
+            <label for="confirm_password">Confirm Password</label>
+
+            <div class="password-wrap">
+                <input
+                    type="password"
+                    id="confirm_password"
+                    name="confirm_password"
+                    placeholder="Re-enter your password"
+                    minlength="8"
+                    autocomplete="new-password"
+                    required
+                >
+
+                <button
+                    type="button"
+                    class="show-password"
+                    data-target="confirm_password"
+                    aria-controls="confirm_password"
+                >Show</button>
+            </div>
+            <p class="field-message" id="confirm-status" aria-live="polite"></p>
+
+            <button type="submit" class="submit-button">
+                CREATE ACCOUNT
+            </button>
+
+        </form>
+
+        <p class="auth-switch">
+            Already have an account?
+            <a href="index.php">Login here</a>
+        </p>
+
+    </main>
+
+</body>
+</html>

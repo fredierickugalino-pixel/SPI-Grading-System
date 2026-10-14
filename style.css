@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -217,6 +218,10 @@ input::placeholder {
     text-decoration: underline;
 }
 
+.resend-form {
+    margin-top: 12px;
+}
+
 @media (max-width: 360px) {
     .login-options {
         align-items: flex-start;
@@ -265,4 +270,40 @@ input::placeholder {
     color: #666;
     font-size: 12px;
     line-height: 1.6;
+}
+
+.password-checklist {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px 12px;
+    margin: -8px 0 18px;
+    padding: 0;
+    color: #666;
+    font-size: 12px;
+    list-style: none;
+}
+
+.password-checklist li::before {
+    content: "○ ";
+    color: #777;
+}
+
+.password-checklist li.is-met {
+    color: #176438;
+}
+
+.password-checklist li.is-met::before {
+    content: "✓ ";
+    font-weight: bold;
+}
+
+.field-message {
+    margin: -15px 0 16px;
+    color: #842029;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.field-message:empty {
+    display: none;
 }

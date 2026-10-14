@@ -1,0 +1,3 @@
+/vendor/
+/php/mail_config.local.php
+/php/mail_errors.log
